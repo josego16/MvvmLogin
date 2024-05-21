@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/icon_home"
+        android:title="@string/btn_bar_home" />
+    <item
+        android:id="@+id/alertFragment"
+        android:icon="@drawable/icon_alert"
+        android:title="@string/btn_bar_alert" />
+    <item android:title="" />
+    <item
+        android:id="@+id/userFragment"
+        android:icon="@drawable/icon_list"
+        android:title="@string/btn_bar_user" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/icon_account"
+        android:title="@string/btn_bar_profile" />
 </menu>
