@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".ui.views.activities.MainActivity">
 
 
@@ -27,15 +26,5 @@
             app:menu="@menu/btn_bar_menu" />
 
     </com.google.android.material.bottomappbar.BottomAppBar>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_layout_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:src="@drawable/icon_add"
-        app:layout_anchor="@id/btn_navigation_view_layout"
-        app:maxImageSize="40dp"
-        app:tint="@color/teal_200" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
