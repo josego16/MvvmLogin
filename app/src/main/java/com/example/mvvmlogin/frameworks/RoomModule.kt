@@ -17,7 +17,7 @@ object RoomModule {
 
     @Singleton
     @Provides
-    fun provideUserDatabase(@ApplicationContext context: Context) =
+    fun provideRoom(@ApplicationContext context: Context) =
         Room.databaseBuilder(context, UserDatabase::class.java, NAME_DATABASE_USERS).build()
 
     @Singleton
