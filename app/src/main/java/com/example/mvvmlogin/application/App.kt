@@ -1,4 +1,8 @@
 package com.example.mvvmlogin.application
 
-class App {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class App: Application() {
 }

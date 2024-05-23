@@ -8,7 +8,7 @@
     app:cardCornerRadius="30dp"
     app:cardElevation="10dp"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.views.fragment.AlertDetailFragment"
+    tools:context=".ui.views.fragment.alerts.AlertDetailFragment"
     app:cardUseCompatPadding="true">
 
     <LinearLayout

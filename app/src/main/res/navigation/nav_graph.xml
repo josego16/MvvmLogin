@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/alertFragment"
-        android:name="com.example.mvvmlogin.ui.views.fragment.AlertFragment"
+        android:name="com.example.mvvmlogin.ui.views.fragment.alerts.AlertFragment"
         android:label="fragment_alert"
         tools:layout="@layout/fragment_alert">
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/alertDetailFragment"
-        android:name="com.example.mvvmlogin.ui.views.fragment.AlertDetailFragment"
+        android:name="com.example.mvvmlogin.ui.views.fragment.alerts.AlertDetailFragment"
         android:label="fragment_alert_detail"
         tools:layout="@layout/fragment_alert_detail">
         <argument
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.example.mvvmlogin.ui.views.fragment.UserFragment"
+        android:name="com.example.mvvmlogin.ui.views.fragment.users.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user">
         <action
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/userDetailFragment"
-        android:name="com.example.mvvmlogin.ui.views.fragment.UserDetailFragment"
+        android:name="com.example.mvvmlogin.ui.views.fragment.users.UserDetailFragment"
         android:label="fragment_user_detail"
         tools:layout="@layout/fragment_user_detail">
         <argument

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    tools:context=".ui.views.fragment.AlertDetailFragment">
+    tools:context=".ui.views.fragment.alerts.AlertDetailFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
