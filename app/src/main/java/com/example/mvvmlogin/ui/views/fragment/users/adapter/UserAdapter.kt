@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvmlogin.R
-import com.example.mvvmlogin.domain.users.models.ListUsuario
 
 class UserAdapter : RecyclerView.Adapter<UserVH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserVH {
@@ -14,10 +13,10 @@ class UserAdapter : RecyclerView.Adapter<UserVH>() {
     }
 
     override fun onBindViewHolder(holder: UserVH, position: Int) {
-        holder.renderize(ListUsuario.listaUsuarios[position])
+        TODO("Not yet implemented")
     }
 
     override fun getItemCount(): Int {
-        return ListUsuario.listaUsuarios.size
+        TODO("Not yet implemented")
     }
 }
