@@ -23,10 +23,6 @@ class RegisterDialogue(var okOnCreateUser: (User) -> Unit) : DialogFragment() {
                 val user = createNewUser(viewUser)
                 if (isUserFilled(user))
                     okOnCreateUser(user)
-                    /*if (isUserValid(user))
-                        okOnCreateUser(user)
-                    else
-                        Toast.makeText(activity, "Formato de email incorrecto", Toast.LENGTH_SHORT).show()*/
                 else
                     Toast.makeText(activity, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show()
             }

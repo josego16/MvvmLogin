@@ -1,5 +1,6 @@
 package com.example.mvvmlogin.ui.viewmodels.users
 
+import android.content.SharedPreferences
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mvvmlogin.domain.users.models.User
@@ -16,6 +17,9 @@ class UserViewModel @Inject constructor(
     private val getUserNameUseCase: UseCaseUserName
 ) : ViewModel() {
     val userLiveData = MutableLiveData<User?>()
+    lateinit var shared: SharedPreferences
+    private var user: User? = null
+    private val activityContext = this
 
     suspend fun login(name: String, password: String) {
         val user = getLoginCase(name, password)
