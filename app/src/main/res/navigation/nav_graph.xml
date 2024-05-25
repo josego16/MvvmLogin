@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.example.mvvmlogin.ui.views.fragment.users.UserFragment"
+        android:name="com.example.mvvmlogin.ui.views.fragment.usuario.UsuarioFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user">
         <action
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/userDetailFragment"
-        android:name="com.example.mvvmlogin.ui.views.fragment.users.UserDetailFragment"
+        android:name="com.example.mvvmlogin.ui.views.fragment.usuario.UsuarioDetailFragment"
         android:label="fragment_user_detail"
         tools:layout="@layout/fragment_user_detail">
         <argument
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.mvvmlogin.ui.views.fragment.ProfileFragment"
+        android:name="com.example.mvvmlogin.ui.views.fragment.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

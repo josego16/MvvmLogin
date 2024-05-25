@@ -6,9 +6,11 @@ import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.mvvmlogin.R
 import com.example.mvvmlogin.databinding.ActivityMainBinding
 import com.example.mvvmlogin.ui.viewmodels.alerts.AlertViewModel
@@ -18,37 +20,50 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+
     lateinit var navController: NavController
     lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var navHostFragment: NavHostFragment
 
     val alertViewmodel: AlertViewModel by viewModels()
     val userViewModel: UserViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarMain.toolbar)
-        /*initList()
-        initNavElements()
-        initBottombar()*/
+
+        initBottomBar()
     }
 
-    private fun initBottombar() {
-        TODO("Not yet implemented")
-    }
+    private fun initBottomBar() {
+        var navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
 
-    private fun initNavElements() {
-        TODO("Not yet implemented")
-    }
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.homeFragment,
+                R.id.alertFragment,
+                R.id.profileFragment,
+                R.id.userFragment
+            ), binding.drawerlayout
+        )
+        binding.appBarMain.appBtnBar.appBtnNavigation.setupWithNavController(navController)
+        setupActionBarWithNavController(navController, appBarConfiguration)
 
-    private fun initList() {
-        TODO("Not yet implemented")
+        navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        this.navController = navHostFragment.navController
+
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+        val navController = findNavController(R.id.nav_host_fragment)
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -64,7 +79,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.toolbar_logout -> {
-                navController.navigate(R.id.toolbar_logout)
                 true
             }
 

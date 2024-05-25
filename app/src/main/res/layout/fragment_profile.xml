@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/grey_light"
     android:padding="20dp"
-    tools:context=".ui.views.fragment.ProfileFragment">
+    tools:context=".ui.views.fragment.profile.ProfileFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
