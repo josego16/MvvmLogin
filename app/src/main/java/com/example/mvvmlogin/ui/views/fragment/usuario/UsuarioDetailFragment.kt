@@ -1,4 +1,4 @@
-package com.example.mvvmlogin.ui.views.fragment.users
+package com.example.mvvmlogin.ui.views.fragment.usuario
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.example.mvvmlogin.data.users.UserList
+import com.example.mvvmlogin.data.usuarios.UsuarioList
 import com.example.mvvmlogin.databinding.FragmentUserDetailBinding
 
-class UserDetailFragment : Fragment() {
+class UsuarioDetailFragment : Fragment() {
     private lateinit var binding: FragmentUserDetailBinding
-    val args: UserDetailFragmentArgs by navArgs()
+    val args: UsuarioDetailFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,7 +23,7 @@ class UserDetailFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val usuario = UserList.usuarios[args.num]
+        val usuario = UsuarioList.usuarios[args.num]
         Glide.with(this).load(usuario.imagen).centerCrop().into(binding.imageViewUser)
         binding.imageViewUser.clipToOutline = true
         binding.tvUserName.text = usuario.name

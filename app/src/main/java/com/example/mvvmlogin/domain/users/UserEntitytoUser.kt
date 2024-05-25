@@ -1,11 +1,11 @@
 package com.example.mvvmlogin.domain.users
 
 import com.example.mvvmlogin.data.users.entities.UserEntity
-import com.example.mvvmlogin.domain.users.models.User
+import com.example.mvvmlogin.domain.users.models.UserModel
 
-fun UserEntity.toDomain(): User? {
+fun UserEntity.toDomain(): UserModel? {
     this?.let {
-        return User(this.name!!, this.password!!, this.email!!)
+        return UserModel(this.name!!, this.password!!, this.email!!)
     }
     return null
 }

@@ -1,4 +1,4 @@
-package com.example.mvvmlogin.domain.users.models
+package com.example.mvvmlogin.data.users.entities
 
 class User(
     val name: String,

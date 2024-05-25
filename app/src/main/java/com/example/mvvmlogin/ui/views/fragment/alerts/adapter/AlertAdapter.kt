@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvmlogin.R
+import com.example.mvvmlogin.data.alerts.AlertList
 
 class AlertAdapter : RecyclerView.Adapter<AlertVH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlertVH {
@@ -13,10 +14,10 @@ class AlertAdapter : RecyclerView.Adapter<AlertVH>() {
     }
 
     override fun onBindViewHolder(holder: AlertVH, position: Int) {
-        TODO("Not yet implemented")
+        holder.renderize(AlertList.alertas[position])
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return AlertList.alertas.size
     }
 }

@@ -1,7 +1,13 @@
 package com.example.mvvmlogin.data.alerts.objects
 
-import com.example.mvvmlogin.domain.alerts.models.Alert
+import com.example.mvvmlogin.data.alerts.models.Alert
 
 object RepositoryAlerts {
-    val alertList : List<Alert> = listOf()
+    val alertList: List<Alert> = listOf(
+        Alert("", "", ""),
+        Alert("", "", ""),
+        Alert("", "", ""),
+        Alert("", "", ""),
+        Alert("", "", ""),
+    )
 }

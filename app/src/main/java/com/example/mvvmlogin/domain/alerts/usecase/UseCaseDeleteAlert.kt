@@ -1,4 +1,8 @@
 package com.example.mvvmlogin.domain.alerts.usecase
 
-class UseCaseDeleteAlert {
+import com.example.mvvmlogin.data.alerts.models.Alert
+import com.example.mvvmlogin.data.alerts.models.AlertRepository
+import javax.inject.Inject
+
+class UseCaseDeleteAlert @Inject constructor() {
 }
