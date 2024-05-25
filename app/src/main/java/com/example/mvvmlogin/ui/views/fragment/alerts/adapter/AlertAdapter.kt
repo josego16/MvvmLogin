@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvmlogin.R
-import com.example.mvvmlogin.data.alerts.AlertList
+import com.example.mvvmlogin.data.alerts.dao.AlertList
 
 class AlertAdapter : RecyclerView.Adapter<AlertVH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlertVH {

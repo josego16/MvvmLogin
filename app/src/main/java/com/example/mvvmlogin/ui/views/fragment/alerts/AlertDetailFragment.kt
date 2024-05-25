@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import com.example.mvvmlogin.data.alerts.AlertList
+import com.example.mvvmlogin.data.alerts.dao.AlertList
 import com.example.mvvmlogin.databinding.FragmentAlertDetailBinding
 
 class AlertDetailFragment : Fragment() {

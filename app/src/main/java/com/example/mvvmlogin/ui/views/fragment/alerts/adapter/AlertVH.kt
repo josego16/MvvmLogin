@@ -2,8 +2,8 @@ package com.example.mvvmlogin.ui.views.fragment.alerts.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mvvmlogin.data.alerts.dao.AlertList
 import com.example.mvvmlogin.data.alerts.models.Alert
-import com.example.mvvmlogin.data.alerts.AlertList
 import com.example.mvvmlogin.databinding.RecyclerviewAlertBinding
 import com.example.mvvmlogin.ui.views.activities.MainActivity
 import com.example.mvvmlogin.ui.views.dialogues.DeleteDialogue
@@ -35,8 +35,16 @@ class AlertVH(view: View) : RecyclerView.ViewHolder(view) {
     }
 
     private fun delAlert(pos: Int) {
+        val dialog = DeleteDialogue(pos, AlertList.alertas[pos].alertDate) { position ->
+            mainActivity.alertViewmodel.removeAlert(pos)
+        }
+        dialog.show(mainActivity.supportFragmentManager, "Eliminar")
     }
 
     private fun editAlert(pos: Int, alert: Alert) {
+        val dialog = EditDialogue(pos, alert) { posi, alerta ->
+            mainActivity.alertViewmodel.editAlert(pos, alert)
+        }
+        dialog.show(mainActivity.supportFragmentManager, "Editar")
     }
 }
