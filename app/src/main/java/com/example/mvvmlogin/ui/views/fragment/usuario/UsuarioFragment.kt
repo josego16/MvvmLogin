@@ -12,13 +12,29 @@ import com.example.mvvmlogin.ui.views.fragment.usuario.adapter.UsuarioAdapter
 
 class UsuarioFragment : Fragment() {
     private lateinit var binding: FragmentUserBinding
+    private lateinit var mainActivity: MainActivity
+    val adapter:UsuarioAdapter = UsuarioAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
+        mainActivity = activity as MainActivity
         binding = FragmentUserBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val layoutManager = LinearLayoutManager(requireActivity())
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+
+        binding.userRecyclerView.layoutManager = layoutManager
+        binding.userRecyclerView.adapter = adapter
+
+        mainActivity.userViewModel.userLiveData.observe(requireActivity()) {
+            binding.userRecyclerView.adapter = adapter
+            adapter.notifyDataSetChanged()
+        }
     }
 }
