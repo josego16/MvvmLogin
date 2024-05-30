@@ -55,8 +55,8 @@ class EditDialogue(
         val binding = FragmentDialogAlertBinding.bind(view)
         arguments?.let { args ->
             binding.etAlertRecyclerName.setText(args.getString(ArgumentAlert.NAME_FIELDS))
-            binding.etAlertRecyclerDescripcion.setText(args.getString(ArgumentAlert.DESCRIPTION_FIELDS))
             binding.etAlertRecyclerDate.setText(args.getString(ArgumentAlert.ALERTDATE_FIELDS))
+            binding.etAlertRecyclerDescripcion.setText(args.getString(ArgumentAlert.DESCRIPTION_FIELDS))
         }
     }
 
@@ -70,6 +70,6 @@ class EditDialogue(
     }
 
     private fun isAlertFilled(alert: Alert): Boolean {
-        return (!(alert.nameAlert.isEmpty() || alert.alertDate.isEmpty()))
+        return (!(alert.nameAlert.isNullOrBlank() || alert.alertDate.isNullOrBlank()))
     }
 }
