@@ -1,10 +1,11 @@
 package com.example.mvvmlogin.ui.views.activities
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -32,6 +33,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var navHostFragment: NavHostFragment
     lateinit var appBarConfiguration: AppBarConfiguration
 
+    lateinit var shared: SharedPreferences
+
     val alertViewmodel: AlertViewModel by viewModels()
     val userViewModel: UserViewModel by viewModels()
 
@@ -40,14 +43,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        getSharedPreferences()
         setSupportActionBar(binding.appBarMain.toolbar)
         initList()
         initNavElements()
         initBottomBar()
     }
 
+    private fun getSharedPreferences() {
+        shared = getSharedPreferences("shared_pref_file", Context.MODE_PRIVATE)
+    }
+
     override fun onSupportNavigateUp(): Boolean {
-        Toast.makeText(this, "Navegacion pulsada", Toast.LENGTH_SHORT).show()
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
@@ -93,8 +100,13 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.toolbar_logout -> {
+                with(shared.edit()) {
+                    clear()
+                    apply()
+                }
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
+                finish()
                 true
             }
 
