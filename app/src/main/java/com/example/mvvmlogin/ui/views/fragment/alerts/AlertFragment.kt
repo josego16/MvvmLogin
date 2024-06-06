@@ -7,10 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mvvmlogin.data.alerts.dao.AlertList
-import com.example.mvvmlogin.data.alerts.dao.DatepickerFragment
 import com.example.mvvmlogin.databinding.FragmentAlertBinding
-import com.example.mvvmlogin.databinding.FragmentDialogAlertBinding
-import com.example.mvvmlogin.ui.viewmodels.alerts.AlertViewModel
 import com.example.mvvmlogin.ui.views.activities.MainActivity
 import com.example.mvvmlogin.ui.views.dialogues.AddDialogue
 import com.example.mvvmlogin.ui.views.fragment.alerts.adapter.AlertAdapter
@@ -18,7 +15,6 @@ import com.example.mvvmlogin.ui.views.fragment.alerts.adapter.AlertAdapter
 class AlertFragment : Fragment() {
     lateinit var binding: FragmentAlertBinding
     private lateinit var mainActivity: MainActivity
-    lateinit var alertViewModel: AlertViewModel
     val adapter: AlertAdapter = AlertAdapter()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

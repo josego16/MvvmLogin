@@ -23,11 +23,13 @@ import com.example.mvvmlogin.data.usuarios.objects.RepositoryUsers
 import com.example.mvvmlogin.databinding.ActivityMainBinding
 import com.example.mvvmlogin.ui.viewmodels.alerts.AlertViewModel
 import com.example.mvvmlogin.ui.viewmodels.users.UserViewModel
+import com.example.mvvmlogin.ui.views.fragment.alerts.adapter.AlertAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    lateinit var adapter: AlertAdapter
 
     lateinit var navController: NavController
     lateinit var navHostFragment: NavHostFragment
@@ -43,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        adapter = AlertAdapter()
         getSharedPreferences()
         setSupportActionBar(binding.appBarMain.toolbar)
         initList()

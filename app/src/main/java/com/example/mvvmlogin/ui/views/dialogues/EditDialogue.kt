@@ -10,9 +10,12 @@ import com.example.mvvmlogin.R
 import com.example.mvvmlogin.data.alerts.models.Alert
 import com.example.mvvmlogin.data.alerts.objects.ArgumentAlert
 import com.example.mvvmlogin.databinding.FragmentDialogAlertBinding
+import com.example.mvvmlogin.ui.views.activities.MainActivity
 
 class EditDialogue(
-    val pos: Int, val alert: Alert, val okOnEditAlert: (Alert, Int) -> Unit
+    val pos: Int,
+    val alert: Alert,
+    val okOnEditAlert: (Alert, Int) -> Unit
 ) : DialogFragment() {
     init {
         val args = Bundle().apply {
@@ -35,6 +38,7 @@ class EditDialogue(
                 val alert = createAlert(view)
                 if (isAlertFilled(alert)) {
                     okOnEditAlert(alert, pos)
+                    (activity as MainActivity).adapter.editAlert(pos, alert)
                 } else {
                     Toast.makeText(
                         activity,
