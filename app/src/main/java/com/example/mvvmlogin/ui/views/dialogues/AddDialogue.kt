@@ -9,14 +9,25 @@ import androidx.fragment.app.DialogFragment
 import com.example.mvvmlogin.R
 import com.example.mvvmlogin.data.alerts.models.Alert
 import com.example.mvvmlogin.databinding.FragmentDialogAlertBinding
+import com.example.mvvmlogin.domain.alerts.datepicker.DatePicker
 
 class AddDialogue(var okOnCreateAlert: (Alert) -> Unit) : DialogFragment() {
+    private lateinit var datePicker: DatePicker
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
-            val builder = AlertDialog.Builder(it)
+            val builder = AlertDialog.Builder(requireContext())
             val inflater = requireActivity().layoutInflater
             val view = inflater.inflate(R.layout.fragment_dialog_alert, null)
             builder.setView(view)
+
+            val binding = FragmentDialogAlertBinding.bind(view)
+            binding.etAlertRecyclerDate.setOnClickListener {
+                datePicker = DatePicker { day, month, year ->
+                    val date = "$day/${month + 1}/$year"
+                    binding.etAlertRecyclerDate.setText(date)
+                }
+                datePicker.show(childFragmentManager, "DatePicker")
+            }
             builder.setMessage("Añadir alerta")
             builder.setPositiveButton("Añadir") { dialog, id ->
                 val alert = createAlert(view)

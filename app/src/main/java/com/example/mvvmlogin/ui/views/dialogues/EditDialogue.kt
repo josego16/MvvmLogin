@@ -10,6 +10,7 @@ import com.example.mvvmlogin.R
 import com.example.mvvmlogin.data.alerts.models.Alert
 import com.example.mvvmlogin.data.alerts.objects.ArgumentAlert
 import com.example.mvvmlogin.databinding.FragmentDialogAlertBinding
+import com.example.mvvmlogin.domain.alerts.datepicker.DatePicker
 import com.example.mvvmlogin.ui.views.activities.MainActivity
 
 class EditDialogue(
@@ -61,6 +62,14 @@ class EditDialogue(
             binding.etAlertRecyclerName.setText(args.getString(ArgumentAlert.NAME_FIELDS))
             binding.etAlertRecyclerDate.setText(args.getString(ArgumentAlert.ALERTDATE_FIELDS))
             binding.etAlertRecyclerDescripcion.setText(args.getString(ArgumentAlert.DESCRIPTION_FIELDS))
+        }
+
+        binding.etAlertRecyclerDate.setOnClickListener {
+            val datePicker = DatePicker { day, month, year ->
+                val date = "$day/${month + 1}/$year"
+                binding.etAlertRecyclerDate.setText(date)
+            }
+            datePicker.show(childFragmentManager, "DatePicker")
         }
     }
 
