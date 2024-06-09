@@ -11,6 +11,7 @@ class UseCaseRegister @Inject constructor(private val userDao: UserDao) {
             UserEntity(
                 name = userModel.name,
                 password = userModel.password,
+                confirmPassword = userModel.confirmPassword,
                 email = userModel.email
             )
         )

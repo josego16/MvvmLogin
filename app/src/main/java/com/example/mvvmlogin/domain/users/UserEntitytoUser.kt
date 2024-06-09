@@ -5,7 +5,7 @@ import com.example.mvvmlogin.domain.users.models.UserModel
 
 fun UserEntity.toDomain(): UserModel? {
     this?.let {
-        return UserModel(this.name!!, this.password!!, this.email!!)
+        return UserModel(this.name!!, this.password!!,this.confirmPassword!!, this.email!!)
     }
     return null
 }

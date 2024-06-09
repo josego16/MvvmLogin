@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
             if (getUserName().trim() == "" || getPass().trim() == "") {
                 Toast.makeText(this, "Los campos no pueden estar vacios", Toast.LENGTH_SHORT).show()
             } else {
-                val fielduser = UserModel(getUserName(), getPass(), "")
+                val fielduser = UserModel(getUserName(), getPass(), "", "")
                 lifecycleScope.launch {
                     login(fielduser)
                 }

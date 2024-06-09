@@ -13,7 +13,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RoomModule {
-    private const val NAME_DATABASE = "db_users"
+    private const val NAME_DATABASE = "users"
 
     @Singleton
     @Provides

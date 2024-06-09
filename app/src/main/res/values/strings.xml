@@ -45,4 +45,5 @@
     <string name="tv_home_title">¡Bienvenido a nuestra app!</string>
     <string name="tv_home_subtitle">Descubre todas las funciones que tenemos para ti.</string>
     <string name="btn_home">Empezar</string>
+    <string name="et_confirm_password_register">Confirma tu contraseña</string>
 </resources>
