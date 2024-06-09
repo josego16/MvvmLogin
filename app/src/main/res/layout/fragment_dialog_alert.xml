@@ -18,6 +18,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:hint="@string/alert_recycler_nombre"
+            app:endIconMode="clear_text"
             app:startIconDrawable="@drawable/icon_account">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -60,6 +61,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:hint="@string/alert_recycler_descripcion"
+            app:endIconMode="clear_text"
             app:startIconDrawable="@drawable/icon_description">
 
             <com.google.android.material.textfield.TextInputEditText
