@@ -1,6 +1,6 @@
 package com.example.mvvmlogin.data.alerts.dao
 
-import com.example.mvvmlogin.data.alerts.models.Alert
+import com.example.mvvmlogin.domain.alerts.models.Alert
 
 interface AlertDao {
     fun getAlertFromDatasource(): List<Alert>

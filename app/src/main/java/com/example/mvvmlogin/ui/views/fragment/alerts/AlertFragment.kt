@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mvvmlogin.data.alerts.dao.AlertList
+import com.example.mvvmlogin.domain.alerts.models.AlertList
 import com.example.mvvmlogin.databinding.FragmentAlertBinding
 import com.example.mvvmlogin.ui.views.activities.MainActivity
 import com.example.mvvmlogin.ui.views.dialogues.AddDialogue

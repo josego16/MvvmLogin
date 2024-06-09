@@ -3,15 +3,11 @@ package com.example.mvvmlogin.ui.viewmodels.alerts
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mvvmlogin.data.alerts.dao.AlertList
-import com.example.mvvmlogin.data.alerts.models.Alert
-import com.example.mvvmlogin.databinding.FragmentAlertBinding
+import com.example.mvvmlogin.domain.alerts.models.Alert
 import com.example.mvvmlogin.domain.alerts.usecase.UseCaseDeleteAlert
 import com.example.mvvmlogin.domain.alerts.usecase.UseCaseEditAlert
 import com.example.mvvmlogin.domain.alerts.usecase.UseCaseGetAlert
 import com.example.mvvmlogin.domain.alerts.usecase.UsecaseAddAlert
-import com.example.mvvmlogin.ui.views.activities.MainActivity
-import com.example.mvvmlogin.ui.views.dialogues.AddDialogue
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -1,4 +1,4 @@
-package com.example.mvvmlogin.data.alerts.models
+package com.example.mvvmlogin.domain.alerts.models
 
 data class Alert(
     /*val id: Int = 0,

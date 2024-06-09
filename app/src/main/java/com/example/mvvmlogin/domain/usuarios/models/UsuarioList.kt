@@ -1,6 +1,4 @@
-package com.example.mvvmlogin.data.usuarios
-
-import com.example.mvvmlogin.data.usuarios.entities.Usuario
+package com.example.mvvmlogin.domain.usuarios.models
 
 class UsuarioList {
     companion object {

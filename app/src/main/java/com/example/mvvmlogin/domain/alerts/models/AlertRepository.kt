@@ -1,6 +1,6 @@
-package com.example.mvvmlogin.data.alerts.dao
+package com.example.mvvmlogin.domain.alerts.models
 
-import com.example.mvvmlogin.data.alerts.models.Alert
+import com.example.mvvmlogin.data.alerts.dao.AlertDao
 import com.example.mvvmlogin.data.alerts.objects.RepositoryAlerts
 
 class AlertRepository : AlertDao {

@@ -16,10 +16,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.mvvmlogin.R
-import com.example.mvvmlogin.data.alerts.dao.AlertList
+import com.example.mvvmlogin.domain.alerts.models.AlertList
 import com.example.mvvmlogin.data.alerts.objects.RepositoryAlerts
-import com.example.mvvmlogin.data.usuarios.UsuarioList
-import com.example.mvvmlogin.data.usuarios.objects.RepositoryUsers
+import com.example.mvvmlogin.domain.usuarios.models.UsuarioList
+import com.example.mvvmlogin.data.users.objects.RepositoryUsers
 import com.example.mvvmlogin.databinding.ActivityMainBinding
 import com.example.mvvmlogin.ui.viewmodels.alerts.AlertViewModel
 import com.example.mvvmlogin.ui.viewmodels.users.UserViewModel

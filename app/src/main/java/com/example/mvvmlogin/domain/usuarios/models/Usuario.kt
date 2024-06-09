@@ -1,4 +1,4 @@
-package com.example.mvvmlogin.data.usuarios.entities
+package com.example.mvvmlogin.domain.usuarios.models
 
 data class Usuario(
     /*var id: Int,*/

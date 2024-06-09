@@ -1,6 +1,4 @@
-package com.example.mvvmlogin.data.alerts.dao
-
-import com.example.mvvmlogin.data.alerts.models.Alert
+package com.example.mvvmlogin.domain.alerts.models
 
 class AlertList {
     companion object {

@@ -1,4 +1,4 @@
-package com.example.mvvmlogin.data.usuarios.objects
+package com.example.mvvmlogin.data.users.objects
 
 object ArgumentUser {
     val NAME_FIELDS = "name"

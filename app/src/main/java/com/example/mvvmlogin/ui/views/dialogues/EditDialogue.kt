@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.mvvmlogin.R
-import com.example.mvvmlogin.data.alerts.models.Alert
+import com.example.mvvmlogin.domain.alerts.models.Alert
 import com.example.mvvmlogin.data.alerts.objects.ArgumentAlert
 import com.example.mvvmlogin.databinding.FragmentDialogAlertBinding
 import com.example.mvvmlogin.domain.alerts.datepicker.DatePicker

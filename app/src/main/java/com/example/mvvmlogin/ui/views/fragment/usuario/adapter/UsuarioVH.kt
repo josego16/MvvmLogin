@@ -3,7 +3,7 @@ package com.example.mvvmlogin.ui.views.fragment.usuario.adapter
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.mvvmlogin.data.usuarios.entities.Usuario
+import com.example.mvvmlogin.domain.usuarios.models.Usuario
 import com.example.mvvmlogin.databinding.RecyclerviewUserBinding
 import com.example.mvvmlogin.ui.views.activities.MainActivity
 import com.example.mvvmlogin.ui.views.fragment.usuario.UsuarioFragmentDirections
