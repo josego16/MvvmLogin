@@ -1,4 +1,4 @@
-package com.example.mvvmlogin.domain.users.usecase
+package com.example.mvvmlogin.domain.users.usecase.db
 
 import com.example.mvvmlogin.data.users.dao.UserDao
 import com.example.mvvmlogin.data.users.entities.UserEntity
