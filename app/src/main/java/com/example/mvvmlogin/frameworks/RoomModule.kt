@@ -18,7 +18,10 @@ object RoomModule {
     @Singleton
     @Provides
     fun provideRoom(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, UserDatabase::class.java, NAME_DATABASE).build()
+        Room.databaseBuilder(context, UserDatabase::class.java, NAME_DATABASE)
+            .allowMainThreadQueries()
+            .fallbackToDestructiveMigration()
+            .build()
 
     @Singleton
     @Provides

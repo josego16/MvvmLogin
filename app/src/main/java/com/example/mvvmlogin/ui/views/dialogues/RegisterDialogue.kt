@@ -54,28 +54,24 @@ class RegisterDialogue(var okOnCreateUser: (UserModel) -> Unit) : DialogFragment
     }
 
     private fun isUserValid(userModel: UserModel): Boolean {
-        var isValid = true
-
-        if (userModel.name.isEmpty() || !userModel.name.matches(Regex("^[A-Za-z][A-Za-z0-9 ]*$"))) {
+        if (userModel.name.isEmpty())
             Toast.makeText(context, "Formato de nombre incorrecto", Toast.LENGTH_SHORT).show()
-            isValid = false
+        else {
+            val regex = "^[A-Za-z][A-Za-z0-9 ]*$"
+            return userModel.name.matches(Regex(regex))
         }
-
-        if (userModel.email.isEmpty() || !userModel.email.matches(Regex("^[A-Za-z][A-Za-z0-9+\\-]+(\\.[A-Za-z0-9+\\-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"))) {
+        if (userModel.email.isEmpty()) {
             Toast.makeText(context, "Formato de email incorrecto", Toast.LENGTH_SHORT).show()
-            isValid = false
+        } else {
+            val regex = "^[A-Za-z][A-Za-z0-9+\\-]+(\\.[A-Za-z0-9+\\-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
+            return userModel.email.matches(Regex(regex))
         }
-
-        if (userModel.password.isEmpty() || !userModel.password.matches(Regex("^[A-Za-z][A-Za-z0-9]*$"))) {
+        if (userModel.password.isEmpty()) {
             Toast.makeText(context, "Formato de contraseña incorrecto", Toast.LENGTH_SHORT).show()
-            isValid = false
+        } else {
+            val regex = "^[A-Za-z][A-Za-z0-9]*$"
+            return userModel.password.matches(Regex(regex))
         }
-
-        if (userModel.confirmPassword.isEmpty() || userModel.password != userModel.confirmPassword) {
-            Toast.makeText(context, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
-            isValid = false
-        }
-
-        return isValid
+        return true
     }
 }
