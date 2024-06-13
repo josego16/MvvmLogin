@@ -9,13 +9,6 @@ class RegisterUseCase @Inject constructor(
     private val contactsService: UserApiService
 ) {
     suspend operator fun invoke(user: UserModel): String {
-        return contactsService.register(
-            RequestRegister(
-                user.email,
-                user.name,
-                user.password,
-                user.imagen
-            )
-        ).toStringResponse()
+        return contactsService.register(RequestRegister(user.username, user.email, user.phone, user.password)).toStringResponse()
     }
 }

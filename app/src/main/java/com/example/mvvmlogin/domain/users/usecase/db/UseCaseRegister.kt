@@ -9,10 +9,10 @@ class UseCaseRegister @Inject constructor(private val userDao: UserDao) {
     suspend operator fun invoke(userModel: UserModel) {
         val userEntity = userDao.register(
             UserEntity(
-                name = userModel.name,
-                password = userModel.password,
-                confirmPassword = userModel.confirmPassword,
-                email = userModel.email
+                name = userModel.username,
+                email = userModel.email,
+                phone = userModel.phone,
+                password = userModel.password
             )
         )
     }

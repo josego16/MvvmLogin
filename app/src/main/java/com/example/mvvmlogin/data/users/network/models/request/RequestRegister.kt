@@ -3,30 +3,23 @@ package com.example.mvvmlogin.data.users.network.models.request
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class RequestRegister(
+class RequestRegister(
+    @SerializedName("username")
+    @Expose
+    val username: String,
+
     @SerializedName("email")
     @Expose
     val email: String,
 
-    @SerializedName("nombre")
+    @SerializedName("phone")
     @Expose
-    val name: String,
+    val phone: String,
 
     @SerializedName("password")
     @Expose
-    val password: String,
-
-    @SerializedName("imagen")
-    @Expose
-    val image: String?
+    val password: String
 ) {
-    constructor(email: String, name: String, password: String) : this(
-        email,
-        name,
-        password,
-        image = null
-    )
-
     @SerializedName("disponible")
     @Expose
     val disponible: String = "1"

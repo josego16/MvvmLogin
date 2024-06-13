@@ -21,14 +21,18 @@ class RegisterDialogue(var okOnCreateUser: (UserModel) -> Unit) : DialogFragment
             builder.setMessage("Crear usuario")
             builder.setPositiveButton("Crear") { dialog, id ->
                 val user = createNewUser(viewUser)
-                if (isUserFilled(user)){
-                    if (isUserValid(user)){
+                if (isUserFilled(user)) {
+                    if (isUserValid(user)) {
                         okOnCreateUser(user)
-                    }else{
+                    } else {
                         Toast.makeText(activity, "Formato incorrecto", Toast.LENGTH_SHORT).show()
                     }
-                }else{
-                    Toast.makeText(activity, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(
+                        activity,
+                        "Todos los campos son obligatorios",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
             builder.setNegativeButton("Cancelar") { dialog, id ->
@@ -44,34 +48,16 @@ class RegisterDialogue(var okOnCreateUser: (UserModel) -> Unit) : DialogFragment
         return UserModel(
             binding.etUsernameRegister.text.toString(),
             binding.etEmailRegister.text.toString(),
-            binding.etPasswordRegister.text.toString(),
-            binding.etConfirmPasswordRegister.text.toString()
+            binding.etPhoneRegister.text.toString(),
+            binding.etPasswordRegister.text.toString()
         )
     }
 
     private fun isUserFilled(userModel: UserModel): Boolean {
-        return (!(userModel.name.isEmpty() || userModel.email.isEmpty() || userModel.password.isEmpty() || userModel.confirmPassword.isEmpty()))
+        return (!(userModel.username.isEmpty() || userModel.email.isEmpty() || userModel.password.isEmpty()))
     }
 
     private fun isUserValid(userModel: UserModel): Boolean {
-        if (userModel.name.isEmpty())
-            Toast.makeText(context, "Formato de nombre incorrecto", Toast.LENGTH_SHORT).show()
-        else {
-            val regex = "^[A-Za-z][A-Za-z0-9 ]*$"
-            return userModel.name.matches(Regex(regex))
-        }
-        if (userModel.email.isEmpty()) {
-            Toast.makeText(context, "Formato de email incorrecto", Toast.LENGTH_SHORT).show()
-        } else {
-            val regex = "^[A-Za-z][A-Za-z0-9+\\-]+(\\.[A-Za-z0-9+\\-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
-            return userModel.email.matches(Regex(regex))
-        }
-        if (userModel.password.isEmpty()) {
-            Toast.makeText(context, "Formato de contraseña incorrecto", Toast.LENGTH_SHORT).show()
-        } else {
-            val regex = "^[A-Za-z][A-Za-z0-9]*$"
-            return userModel.password.matches(Regex(regex))
-        }
         return true
     }
 }

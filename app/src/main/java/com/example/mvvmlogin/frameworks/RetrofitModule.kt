@@ -12,7 +12,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
-    private const val URL_BASE_RETROFIT = "http://192.168.0.18:8008/api-usuarios/endp/"
+    private const val URL_BASE_RETROFIT = "http://10.0.2.2:8008/api-usuarios/endp/"
 
     @Singleton
     @Provides

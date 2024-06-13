@@ -23,14 +23,14 @@ class UserViewModel @Inject constructor(
         userLiveData.value = user
     }*/
 
+    /*suspend fun register(userModel: UserModel) {
+        getRegisterUseCase(userModel)
+    }*/
+
     suspend fun getUserByName(name: String) {
         val user = getUserNameUseCase(name)
         userLiveData.value = user
     }
-
-    /*suspend fun register(userModel: UserModel) {
-        getRegisterUseCase(userModel)
-    }*/
 
     suspend fun userExist(name: String): Boolean {
         val user = getUserNameUseCase(name)

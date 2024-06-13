@@ -5,25 +5,23 @@ import com.example.mvvmlogin.data.users.network.models.response.ResponseRegister
 import com.example.mvvmlogin.domain.users.models.UserModel
 
 fun Result<ResponseLogin>.toDomain(): UserModel {
-    if (this.isSuccess) {
-        val user = this.getOrNull()!!
-        if (user.image != null)
-            return UserModel(user.name, "", user.email, user.token, "", user.image)
-        else
-            return UserModel(
-                this.getOrNull()!!.name, "", "",
-                this.getOrNull()!!.email,
-                this.getOrNull()!!.token, ""
-            )
-    } else {
-        return UserModel(this.exceptionOrNull()!!.message!!)
+    return if (this.isSuccess)
+        UserModel(
+            this.getOrNull()!!.username,
+            this.getOrNull()!!.email,
+            this.getOrNull()!!.phone,
+            this.getOrNull()!!.password,
+            this.getOrNull()!!.token,
+            "1"
+        )
+    else {
+        UserModel(this.exceptionOrNull()!!.message!!)
     }
 }
 
 fun Result<ResponseRegister>.toStringResponse(): String {
-    if (this.isSuccess)
-        return "Usuario añadido correctamente"
-    else {
-        return this.exceptionOrNull()!!.message!!
-    }
+    return if (this.isSuccess)
+        "Usuario añadido correctamente"
+    else
+        this.exceptionOrNull()!!.message!!
 }

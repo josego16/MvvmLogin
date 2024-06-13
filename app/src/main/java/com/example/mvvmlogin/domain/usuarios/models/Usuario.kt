@@ -1,7 +1,6 @@
 package com.example.mvvmlogin.domain.usuarios.models
 
 data class Usuario(
-    /*var id: Int,*/
     var name: String,
     var email: String,
     var phone: String,

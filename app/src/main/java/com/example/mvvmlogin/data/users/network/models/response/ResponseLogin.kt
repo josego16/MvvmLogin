@@ -3,32 +3,40 @@ package com.example.mvvmlogin.data.users.network.models.response
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class ResponseLogin(
+class ResponseLogin {
     @SerializedName("result")
     @Expose
-    val result: String = "",
+    val result: String = ""
 
     @SerializedName("token")
     @Expose
-    val token: String = "",
+    val token: String = ""
 
     @SerializedName("id")
     @Expose
-    val id: Int = 0,
+    val id: Int = 0
 
-    @SerializedName("nombre")
+    @SerializedName("username")
     @Expose
-    val name: String = "",
+    val username: String = ""
 
     @SerializedName("email")
     @Expose
-    val email: String = "",
+    val email: String = ""
+
+    @SerializedName("phone")
+    @Expose
+    val phone: String = ""
+
+    @SerializedName("password")
+    @Expose
+    val password: String = ""
 
     @SerializedName("imagen")
     @Expose
-    val image: String = "",
+    val imagen: String = ""
 
     @SerializedName("details")
     @Expose
     var details: String = ""
-)
+}

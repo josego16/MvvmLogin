@@ -1,62 +1,37 @@
 package com.example.mvvmlogin.domain.users.models
 
 class UserModel(
-    val name: String,
-    val password: String,
-    val confirmPassword: String,
+    val username: String,
     val email: String,
+    val phone: String,
+    val password: String,
     val token: String,
-    val details: String,
-    val imagen: String?
+    val disponible: String
 ) {
-    // Constructor para detalles
-    constructor(details: String) : this(
-        name = "",
+    constructor(disponible: String) : this(
+        username = "",
+        email = "",
+        phone = "",
         password = "",
-        confirmPassword = "",
-        email = "",
         token = "",
-        details,
-        imagen = ""
+        disponible
     )
 
-    // Constructor para usuario sin imagen
-    constructor(
-        name: String,
-        password: String,
-        confirmPassword: String,
-        email: String,
-        token: String,
-        details: String
-    ) : this(
-        name,
-        password,
-        confirmPassword,
+    constructor(username: String, email: String, phone: String, password: String) : this(
+        username,
+        phone,
         email,
-        token,
-        details,
-        imagen = null
+        password,
+        token = "",
+        disponible = "true"
     )
 
-    // Constructor para registro
-    constructor(name: String, password: String, email: String, confirmPassword: String) : this(
-        name,
+    constructor(username: String, password: String) : this(
+        username,
+        "",
+        "",
         password,
-        confirmPassword,
-        email,
         token = "",
-        details = "",
-        imagen = null
-    )
-
-    // Constructor para login
-    constructor(name: String, password: String) : this(
-        name,
-        password,
-        confirmPassword = "",
-        email = "",
-        token = "",
-        details = "",
-        imagen = ""
+        disponible = ""
     )
 }

@@ -10,7 +10,7 @@ data class UserEntity (
     @ColumnInfo(name = "id") val uid: Int = 0,
     @ColumnInfo(name = "name") val name: String?,
     @ColumnInfo(name = "email") val email: String?,
-    @ColumnInfo(name = "password") val password: String?,
-    @ColumnInfo(name = "confirmPassword") val confirmPassword: String?
+    @ColumnInfo(name = "phone") val phone: String?,
+    @ColumnInfo(name = "password") val password: String?
 ){
 }

@@ -22,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
     val userViewModel: UserViewModel by viewModels()
     private val activityContext = this
     private var userModel: UserModel? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -49,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun saveSharedPreferences(userModel: UserModel) {
         with(shared.edit()) {
-            putString("username", userModel.name)
+            putString("username", userModel.username)
             putString("password", userModel.password)
             putBoolean("isLoggedIn", true)
             apply()
@@ -94,13 +95,13 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private suspend fun findUserByName(user: UserModel) { // Para el registro
-        userViewModel.getUserByName(user.name)
+        userViewModel.getUserByName(user.username)
     }
 
     private suspend fun login(user: UserModel) {
-        val result = userViewModel.login(user.name, user.password)
+        val result = userViewModel.login(user.username, user.password)
         if (result != null) {
-            val userExist = userViewModel.userExist(user.name)
+            val userExist = userViewModel.userExist(user.username)
             if (userExist) {
                 saveSharedPreferences(user)
                 val intent = Intent(activityContext, MainActivity::class.java)
@@ -117,6 +118,7 @@ class LoginActivity : AppCompatActivity() {
             ).show()
         }
     }
+
     private suspend fun register(user: UserModel) {
         userViewModel.register(user)
     }
