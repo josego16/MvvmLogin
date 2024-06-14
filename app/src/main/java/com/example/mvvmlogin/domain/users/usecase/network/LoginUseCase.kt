@@ -1,13 +1,15 @@
 package com.example.mvvmlogin.domain.users.usecase.network
 
-import com.example.mvvmlogin.data.users.network.models.request.RequestLogin
-import com.example.mvvmlogin.data.users.network.service.UserApiService
+import android.content.ContentValues.TAG
+import android.util.Log
 import com.example.mvvmlogin.domain.users.models.UserModel
+import com.example.mvvmlogin.domain.users.models.UserRepository
 import javax.inject.Inject
 
-class LoginUseCase @Inject constructor(private val userApiService: UserApiService) {
+class LoginUseCase @Inject constructor(private val userRepository: UserRepository) {
 
-    suspend operator fun invoke(username: String, password: String): UserModel {
-        return userApiService.login(RequestLogin(username, password)).toDomain()
+    suspend fun login(email: String, password: String): UserModel? {
+        Log.i(TAG, "login: $email $password")
+        return userRepository.loginApi(email, password)
     }
 }

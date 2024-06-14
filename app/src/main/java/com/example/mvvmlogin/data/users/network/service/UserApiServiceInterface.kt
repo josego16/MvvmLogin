@@ -7,8 +7,9 @@ import com.example.mvvmlogin.data.users.network.models.response.ResponseRegister
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
+
 interface UserApiServiceInterface {
-    @POST("login")
+    @POST("auth")
     suspend fun login(@Body user: RequestLogin): Response<ResponseLogin>
 
     @POST("register")

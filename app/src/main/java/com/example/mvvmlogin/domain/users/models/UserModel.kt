@@ -1,37 +1,37 @@
 package com.example.mvvmlogin.domain.users.models
 
 class UserModel(
-    val username: String,
+    val name: String,
     val email: String,
     val phone: String,
     val password: String,
-    val token: String,
-    val disponible: String
+    val imagen: String,
+    val token: String = ""
 ) {
     constructor(disponible: String) : this(
-        username = "",
+        name = "",
         email = "",
         phone = "",
         password = "",
-        token = "",
-        disponible
+        imagen = "",
+        token = ""
     )
 
-    constructor(username: String, email: String, phone: String, password: String) : this(
-        username,
+    constructor(name: String, email: String, phone: String, password: String) : this(
+        name,
         phone,
         email,
         password,
-        token = "",
-        disponible = "true"
+        imagen = "",
+        token = ""
     )
 
-    constructor(username: String, password: String) : this(
-        username,
+    constructor(email: String, password: String) : this(
         "",
+        email,
         "",
         password,
+        imagen = "",
         token = "",
-        disponible = ""
     )
 }

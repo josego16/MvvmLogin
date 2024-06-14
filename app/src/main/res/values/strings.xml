@@ -6,20 +6,22 @@
         <br><b>Login</b> para acceder a la aplicacion.</br>
         <br><b>Register</b> para crear un nuevo usuario y acceder a la aplicacion.</br>
     </string>
-    <string name="tv_username_login">Username</string>
-    <string name="et_username_login">Escribe tu usuario</string>
+    <string name="tv_email_login">E-mail</string>
+    <string name="et_email_login">Escribe tu correo electronico</string>
     <string name="tv_password_login">Password</string>
     <string name="et_password_login">Escribe tu contraseña</string>
     <string name="tv_btn_login">LOGIN</string>
     <string name="tv_btn_register">REGISTER</string>
 
     <!-- Register dialog -->
-    <string name="tv_username_register">Username</string>
-    <string name="et_username_register">Escribe tu usuario</string>
+    <string name="tv_name_register">Name</string>
+    <string name="et_name_register">Escribe tu nombre</string>
+    <string name="tv_email_register">E-mail</string>
+    <string name="et_email_register">Escribe tu correo electronico</string>
+    <string name="tv_phone_register">Telefono</string>
+    <string name="et_phone_register">Escribe tu numero de telefono</string>
     <string name="tv_password_register">Password</string>
     <string name="et_password_register">Escribe tu contraseña</string>
-    <string name="tv_email_register">Email</string>
-    <string name="et_email_register">Escribe tu correo electronico</string>
 
     <!-- Bottom bar -->
     <string name="btn_bar_home">HOME</string>
@@ -29,21 +31,30 @@
     <string name="btn_bar_logout">LOGOUT</string>
 
     <!-- Add & Edit dialog -->
-    <!-- Details dialog -->
-    <!-- Other things -->
-    <string name="img_content">esto es una imagen</string>
     <string name="alert_recycler_nombre">Nombre de la alerta</string>
     <string name="alert_recycler_fecha">Fecha de la alerta</string>
     <string name="alert_recycler_descripcion">Descripción de la alerta</string>
-    <string name="tv_user_name">Name</string>
-    <string name="tv_user_email">Email</string>
-    <string name="tv_user_phone">Phone</string>
-    <string name="et_phone_register">Escribe tu numero de telefono</string>
+
+    <!-- Profile dialog -->
     <string name="tv_profile_name">Nombre del usuario</string>
     <string name="tv_profile_email">email@example.com</string>
     <string name="tv_profile_phone">+34 111 222 333</string>
+
+    <!-- Home Fragment -->
     <string name="tv_home_title">¡Bienvenido a nuestra app!</string>
     <string name="tv_home_subtitle">Descubre todas las funciones que tenemos para ti.</string>
     <string name="btn_home">Empezar</string>
-    <string name="et_confirm_password_register">Confirma tu contraseña</string>
+
+    <!-- User Detail Fragment -->
+    <string name="tv_user_detail_name">Name</string>
+    <string name="tv_user_detail_email">Email</string>
+    <string name="tv_user_detail_phone">Phone</string>
+
+    <!--- User Fragment -->
+    <string name="tv_user_name">Name</string>
+    <string name="tv_user_email">E-mail</string>
+    <string name="tv_user_phone">Telefono</string>
+
+    <!-- Other things -->
+    <string name="img_content">esto es una imagen</string>
 </resources>

@@ -18,10 +18,10 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
-    lateinit var shared: SharedPreferences
     val userViewModel: UserViewModel by viewModels()
-    private val activityContext = this
     private var userModel: UserModel? = null
+    lateinit var shared: SharedPreferences
+    private val activityContext = this
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun saveSharedPreferences(userModel: UserModel) {
         with(shared.edit()) {
-            putString("username", userModel.username)
+            putString("email", userModel.email)
             putString("password", userModel.password)
             putBoolean("isLoggedIn", true)
             apply()
@@ -59,10 +59,10 @@ class LoginActivity : AppCompatActivity() {
 
     private fun initBtn() {
         binding.btnLogin.setOnClickListener { vista ->
-            if (getUserName().trim() == "" || getPass().trim() == "") {
+            if (getEmail().trim() == "" || getPass().trim() == "") {
                 Toast.makeText(this, "Los campos no pueden estar vacios", Toast.LENGTH_SHORT).show()
             } else {
-                val fielduser = UserModel(getUserName(), getPass(), "", "")
+                val fielduser = UserModel("", getEmail(), "", getPass(), "", "")
                 lifecycleScope.launch {
                     login(fielduser)
                 }
@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener { vista ->
             val dialog = RegisterDialogue { fieluser ->
                 lifecycleScope.launch {
-                    findUserByName(fieluser)
+                    findUserByEmail(fieluser)
                     if (userModel != null) {
                         Toast.makeText(activityContext, "Usuario ya registrado", Toast.LENGTH_SHORT)
                             .show()
@@ -86,22 +86,22 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun getUserName(): String {
-        return binding.etUsernameLogin.text.toString().trim()
+    private fun getEmail(): String {
+        return binding.etEmailLogin.text.toString().trim()
     }
 
     private fun getPass(): String {
         return binding.etPasswordLogin.text.toString().trim()
     }
 
-    private suspend fun findUserByName(user: UserModel) { // Para el registro
-        userViewModel.getUserByName(user.username)
+    private suspend fun findUserByEmail(user: UserModel) { // Para el registro
+        userViewModel.getUserByEmail(user.email)
     }
 
     private suspend fun login(user: UserModel) {
-        val result = userViewModel.login(user.username, user.password)
+        val result = userViewModel.login(user.email, user.password)
         if (result != null) {
-            val userExist = userViewModel.userExist(user.username)
+            val userExist = userViewModel.userExist(user.email)
             if (userExist) {
                 saveSharedPreferences(user)
                 val intent = Intent(activityContext, MainActivity::class.java)

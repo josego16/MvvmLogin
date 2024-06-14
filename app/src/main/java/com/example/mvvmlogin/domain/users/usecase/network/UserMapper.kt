@@ -6,14 +6,7 @@ import com.example.mvvmlogin.domain.users.models.UserModel
 
 fun Result<ResponseLogin>.toDomain(): UserModel {
     return if (this.isSuccess)
-        UserModel(
-            this.getOrNull()!!.username,
-            this.getOrNull()!!.email,
-            this.getOrNull()!!.phone,
-            this.getOrNull()!!.password,
-            this.getOrNull()!!.token,
-            "1"
-        )
+        UserModel("", "", "", "", "", "")
     else {
         UserModel(this.exceptionOrNull()!!.message!!)
     }

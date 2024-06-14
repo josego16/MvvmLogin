@@ -13,8 +13,8 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.example.mvvmlogin.domain.usuarios.models.UsuarioList
 import com.example.mvvmlogin.databinding.FragmentUserDetailBinding
+import com.example.mvvmlogin.domain.usuarios.models.UsuarioList
 
 class UsuarioDetailFragment : Fragment() {
     private lateinit var binding: FragmentUserDetailBinding
@@ -48,7 +48,7 @@ class UsuarioDetailFragment : Fragment() {
     }
 
     private fun crearCorreo() {
-        val intent = Intent(Intent.ACTION_SENDTO).apply {
+        val intent = Intent(Intent.ACTION_CALL).apply {
             data = Uri.parse("mailto:")
             putExtra(Intent.EXTRA_EMAIL, "${binding.tvUserEmail.text}")
             putExtra(Intent.EXTRA_SUBJECT, "")

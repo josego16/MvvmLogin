@@ -4,10 +4,12 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class RequestLogin(
-    @SerializedName("username")
+    @SerializedName("email")
     @Expose
-    var username: String,
+    val email: String,
+
     @SerializedName("password")
     @Expose
-    var password: String
-) {}
+    val passw: String
+
+)

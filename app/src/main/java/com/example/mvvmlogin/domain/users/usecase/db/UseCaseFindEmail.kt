@@ -5,9 +5,9 @@ import com.example.mvvmlogin.domain.users.models.UserModel
 import com.example.mvvmlogin.domain.users.toDomain
 import javax.inject.Inject
 
-class UseCaseUserName @Inject constructor(private val userDao: UserDao) {
-    suspend operator fun invoke(name: String): UserModel? {
-        val user = userDao.getUserByUsername(name)
+class UseCaseFindEmail @Inject constructor(private val userDao: UserDao) {
+    suspend operator fun invoke(email: String): UserModel? {
+        val user = userDao.getUserByEmail(email)
         user?.let {
             return user.toDomain()
         }

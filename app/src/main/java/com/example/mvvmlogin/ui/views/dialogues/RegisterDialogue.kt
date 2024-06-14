@@ -54,7 +54,7 @@ class RegisterDialogue(var okOnCreateUser: (UserModel) -> Unit) : DialogFragment
     }
 
     private fun isUserFilled(userModel: UserModel): Boolean {
-        return (!(userModel.username.isEmpty() || userModel.email.isEmpty() || userModel.password.isEmpty()))
+        return (!(userModel.name.isEmpty() || userModel.email.isEmpty() || userModel.password.isEmpty()))
     }
 
     private fun isUserValid(userModel: UserModel): Boolean {
